@@ -1,3 +1,5 @@
+const RESULTS_SECTION = document.getElementById('results')
+
 export function renderResults(state) {
   const ipEl = document.getElementById('result-ip')
   const locationEl = document.getElementById('result-location')
@@ -5,6 +7,8 @@ export function renderResults(state) {
   const ispEl = document.getElementById('result-isp')
 
   if (!ipEl) return
+
+  RESULTS_SECTION.dataset.state = state.loading ? 'loading' : state.error ? 'error' : 'ready'
 
   if (state.loading) {
     ipEl.textContent = 'Loading...'

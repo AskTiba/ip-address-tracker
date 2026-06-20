@@ -5,6 +5,7 @@ import { fetchIPInfo } from './api/ipify.js'
 import { initMap, updateMap } from './map/init.js'
 import { setupSearch } from './ui/search.js'
 import { renderResults } from './ui/results.js'
+import { setupMapUI } from './ui/map.js'
 
 async function init() {
   store.subscribe(renderResults)
@@ -17,6 +18,7 @@ async function init() {
   initMap('map')
 
   setupSearch()
+  setupMapUI()
 
   store.setState({ loading: true })
 
