@@ -14,6 +14,10 @@ async function init() {
     }
   })
 
+  initMap('map')
+
+  setupSearch()
+
   store.setState({ loading: true })
 
   try {
@@ -30,10 +34,6 @@ async function init() {
   } catch {
     store.setState({ loading: false, error: 'Failed to load your IP information.' })
   }
-
-  initMap('map')
-
-  setupSearch()
 }
 
 init()
