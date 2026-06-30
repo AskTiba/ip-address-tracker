@@ -8,6 +8,9 @@ export function initMap(containerId) {
   const container = document.getElementById(containerId)
   if (!container) return
 
+  container.setAttribute('role', 'img')
+  container.setAttribute('aria-label', 'Interactive map — location will appear after searching')
+
   map = L.map(containerId).setView([51.505, -0.09], 13)
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

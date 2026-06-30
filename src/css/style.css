@@ -1,6 +1,6 @@
 :root {
   --gray-950: hsl(0, 0%, 17%);
-  --gray-400: hsl(0, 0%, 59%);
+  --gray-400: hsl(0, 0%, 58%);
   --white: hsl(0, 0%, 100%);
   --black: hsl(0, 0%, 0%);
   --font-rubik: 'Rubik', sans-serif;
@@ -88,6 +88,11 @@ h1 {
   outline: none;
   width: 100%;
   cursor: pointer;
+}
+
+#search-input:focus-visible {
+  outline: 2px solid var(--black);
+  outline-offset: -2px;
 }
 
 #search-input::placeholder {
@@ -233,11 +238,8 @@ h1 {
 .attribution {
   font-size: 11px;
   text-align: center;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  z-index: 1000;
   padding: 10px;
   background: rgba(255, 255, 255, 0.7);
+  flex-shrink: 0;
 }
 .attribution a { color: hsl(228, 45%, 44%); }
