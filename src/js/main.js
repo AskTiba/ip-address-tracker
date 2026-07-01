@@ -33,8 +33,8 @@ async function init() {
       lng: data.location.lng,
       loading: false
     })
-  } catch {
-    store.setState({ loading: false, error: 'Failed to load your IP information.' })
+  } catch (err) {
+    store.setState({ loading: false, error: err.message || 'Failed to load your IP information.' })
   }
 }
 
